@@ -1,8 +1,9 @@
 import { react } from 'react'
 import  { useEffect, useState } from 'react'
 import ContactRow from './contactRow.jsx'
+import Selected from './selected.jsx'
 
-const ContactList = () => {
+const ContactList = ({ setSelectedContact }) => {
   const [contactInfo, setContactInfo] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const ContactList = () => {
     getContacts();
   },[]);
  
-  console.log('Contact info state:', contactInfo); // Add this line to log the state
+  console.log('Contact info state:', contactInfo);
 
 
   return (
@@ -34,7 +35,7 @@ const ContactList = () => {
         </tr>
         {
           contactInfo.map((contact) => {
-            return <ContactRow key={contact.id} contact={contact} />
+            return <ContactRow key={contact.id} contact={contact} setSelectedContact={setSelectedContact}/>
             
             
           })
