@@ -1,14 +1,18 @@
 import { useState } from 'react'
+import ContactList from './components/ContactList.jsx'
 
 
-const ContactList =() => {
-  
+
+
+const App =() => {
+  const [selectedContact, setSelectedContact] = useState({});
 
   return (
     <>
       
+      <ContactList />
     </>
   )
-}
+};
 
-export default ContactList
+export default App
